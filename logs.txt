@@ -1,0 +1,294 @@
+nest-backend  | 
+nest-backend  | > nest-backend@0.0.1 start:prod
+nest-backend  | > node dist/main
+nest-backend  | 
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:18 PM [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:18 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +42ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:18 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mPassportModule dependencies initialized[39m[38;5;3m +0ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:18 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mMulterModule dependencies initialized[39m[38;5;3m +0ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:18 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTelegrafModule dependencies initialized[39m[38;5;3m +0ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:18 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mMulterModule dependencies initialized[39m[38;5;3m +0ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:18 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigHostModule dependencies initialized[39m[38;5;3m +1ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:18 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mDiscoveryModule dependencies initialized[39m[38;5;3m +0ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:18 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigModule dependencies initialized[39m[38;5;3m +2ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:18 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigModule dependencies initialized[39m[38;5;3m +1ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:18 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mServeStaticModule dependencies initialized[39m[38;5;3m +0ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:18 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mScheduleModule dependencies initialized[39m[38;5;3m +0ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:18 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mJwtModule dependencies initialized[39m[38;5;3m +133ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:18 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTelegrafCoreModule dependencies initialized[39m[38;5;3m +1ms[39m
+nest-backend  | [31m[Nest] 18  - [39m01/30/2026, 6:41:18 PM [31m  ERROR[39m [38;5;3m[TypeOrmModule] [39m[31mUnable to connect to the database. Retrying (1)...[39m
+nest-backend  | error: password authentication failed for user "postgres"
+nest-backend  |     at parseErrorMessage (/app/node_modules/pg-protocol/dist/parser.js:305:11)
+nest-backend  |     at Parser.handlePacket (/app/node_modules/pg-protocol/dist/parser.js:143:27)
+nest-backend  |     at Parser.parse (/app/node_modules/pg-protocol/dist/parser.js:37:38)
+nest-backend  |     at Socket.<anonymous> (/app/node_modules/pg-protocol/dist/index.js:11:42)
+nest-backend  |     at Socket.emit (node:events:524:28)
+nest-backend  |     at addChunk (node:internal/streams/readable:561:12)
+nest-backend  |     at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+nest-backend  |     at Readable.push (node:internal/streams/readable:392:5)
+nest-backend  |     at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+nest-backend  | /app/node_modules/telegraf/lib/core/network/client.js:315
+nest-backend  |             throw new error_1.default(data, { method, payload });
+nest-backend  |                   ^
+nest-backend  | 
+nest-backend  | TelegramError: 401: Unauthorized
+nest-backend  |     at Telegram.callApi (/app/node_modules/telegraf/lib/core/network/client.js:315:19)
+nest-backend  |     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+nest-backend  |     at async Telegraf.launch (/app/node_modules/telegraf/lib/telegraf.js:188:78) {
+nest-backend  |   response: { ok: false, error_code: 401, description: 'Unauthorized' },
+nest-backend  |   on: { method: 'getMe', payload: {} }
+nest-backend  | }
+nest-backend  | 
+nest-backend  | Node.js v20.20.0
+nest-backend  | 
+nest-backend  | > nest-backend@0.0.1 start:prod
+nest-backend  | > node dist/main
+nest-backend  | 
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:22 PM [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:22 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +57ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:22 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mPassportModule dependencies initialized[39m[38;5;3m +0ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:22 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mMulterModule dependencies initialized[39m[38;5;3m +0ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:22 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTelegrafModule dependencies initialized[39m[38;5;3m +0ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:22 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mMulterModule dependencies initialized[39m[38;5;3m +1ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:22 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigHostModule dependencies initialized[39m[38;5;3m +1ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:22 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mDiscoveryModule dependencies initialized[39m[38;5;3m +1ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:22 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigModule dependencies initialized[39m[38;5;3m +3ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:22 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigModule dependencies initialized[39m[38;5;3m +1ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:22 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mServeStaticModule dependencies initialized[39m[38;5;3m +0ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:22 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mScheduleModule dependencies initialized[39m[38;5;3m +1ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:22 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mJwtModule dependencies initialized[39m[38;5;3m +144ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:22 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTelegrafCoreModule dependencies initialized[39m[38;5;3m +1ms[39m
+nest-backend  | [31m[Nest] 18  - [39m01/30/2026, 6:41:22 PM [31m  ERROR[39m [38;5;3m[TypeOrmModule] [39m[31mUnable to connect to the database. Retrying (1)...[39m
+nest-backend  | error: password authentication failed for user "postgres"
+nest-backend  |     at parseErrorMessage (/app/node_modules/pg-protocol/dist/parser.js:305:11)
+nest-backend  |     at Parser.handlePacket (/app/node_modules/pg-protocol/dist/parser.js:143:27)
+nest-backend  |     at Parser.parse (/app/node_modules/pg-protocol/dist/parser.js:37:38)
+nest-backend  |     at Socket.<anonymous> (/app/node_modules/pg-protocol/dist/index.js:11:42)
+nest-backend  |     at Socket.emit (node:events:524:28)
+nest-backend  |     at addChunk (node:internal/streams/readable:561:12)
+nest-backend  |     at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+nest-backend  |     at Readable.push (node:internal/streams/readable:392:5)
+nest-backend  |     at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+nest-backend  | /app/node_modules/telegraf/lib/core/network/client.js:315
+nest-backend  |             throw new error_1.default(data, { method, payload });
+nest-backend  |                   ^
+nest-backend  | 
+nest-backend  | TelegramError: 401: Unauthorized
+nest-backend  |     at Telegram.callApi (/app/node_modules/telegraf/lib/core/network/client.js:315:19)
+nest-backend  |     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+nest-backend  |     at async Telegraf.launch (/app/node_modules/telegraf/lib/telegraf.js:188:78) {
+nest-backend  |   response: { ok: false, error_code: 401, description: 'Unauthorized' },
+nest-backend  |   on: { method: 'getMe', payload: {} }
+nest-backend  | }
+nest-backend  | 
+nest-backend  | Node.js v20.20.0
+nest-backend  | 
+nest-backend  | > nest-backend@0.0.1 start:prod
+nest-backend  | > node dist/main
+nest-backend  | 
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:26 PM [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:26 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +88ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:26 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mPassportModule dependencies initialized[39m[38;5;3m +0ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:26 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mMulterModule dependencies initialized[39m[38;5;3m +0ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:26 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTelegrafModule dependencies initialized[39m[38;5;3m +0ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:26 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mMulterModule dependencies initialized[39m[38;5;3m +0ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:26 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigHostModule dependencies initialized[39m[38;5;3m +2ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:26 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mDiscoveryModule dependencies initialized[39m[38;5;3m +1ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:26 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigModule dependencies initialized[39m[38;5;3m +4ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:26 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigModule dependencies initialized[39m[38;5;3m +0ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:26 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mServeStaticModule dependencies initialized[39m[38;5;3m +0ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:26 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mScheduleModule dependencies initialized[39m[38;5;3m +1ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:26 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mJwtModule dependencies initialized[39m[38;5;3m +125ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:26 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTelegrafCoreModule dependencies initialized[39m[38;5;3m +1ms[39m
+nest-backend  | [31m[Nest] 18  - [39m01/30/2026, 6:41:26 PM [31m  ERROR[39m [38;5;3m[TypeOrmModule] [39m[31mUnable to connect to the database. Retrying (1)...[39m
+nest-backend  | error: password authentication failed for user "postgres"
+nest-backend  |     at parseErrorMessage (/app/node_modules/pg-protocol/dist/parser.js:305:11)
+nest-backend  |     at Parser.handlePacket (/app/node_modules/pg-protocol/dist/parser.js:143:27)
+nest-backend  |     at Parser.parse (/app/node_modules/pg-protocol/dist/parser.js:37:38)
+nest-backend  |     at Socket.<anonymous> (/app/node_modules/pg-protocol/dist/index.js:11:42)
+nest-backend  |     at Socket.emit (node:events:524:28)
+nest-backend  |     at addChunk (node:internal/streams/readable:561:12)
+nest-backend  |     at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+nest-backend  |     at Readable.push (node:internal/streams/readable:392:5)
+nest-backend  |     at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+nest-backend  | /app/node_modules/telegraf/lib/core/network/client.js:315
+nest-backend  |             throw new error_1.default(data, { method, payload });
+nest-backend  |                   ^
+nest-backend  | 
+nest-backend  | TelegramError: 401: Unauthorized
+nest-backend  |     at Telegram.callApi (/app/node_modules/telegraf/lib/core/network/client.js:315:19)
+nest-backend  |     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+nest-backend  |     at async Telegraf.launch (/app/node_modules/telegraf/lib/telegraf.js:188:78) {
+nest-backend  |   response: { ok: false, error_code: 401, description: 'Unauthorized' },
+nest-backend  |   on: { method: 'getMe', payload: {} }
+nest-backend  | }
+nest-backend  | 
+nest-backend  | Node.js v20.20.0
+nest-backend  | 
+nest-backend  | > nest-backend@0.0.1 start:prod
+nest-backend  | > node dist/main
+nest-backend  | 
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:31 PM [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:31 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +58ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:31 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mPassportModule dependencies initialized[39m[38;5;3m +0ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:31 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mMulterModule dependencies initialized[39m[38;5;3m +0ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:31 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTelegrafModule dependencies initialized[39m[38;5;3m +0ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:31 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mMulterModule dependencies initialized[39m[38;5;3m +0ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:31 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigHostModule dependencies initialized[39m[38;5;3m +1ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:31 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mDiscoveryModule dependencies initialized[39m[38;5;3m +0ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:31 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigModule dependencies initialized[39m[38;5;3m +2ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:31 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigModule dependencies initialized[39m[38;5;3m +1ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:31 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mServeStaticModule dependencies initialized[39m[38;5;3m +0ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:31 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mScheduleModule dependencies initialized[39m[38;5;3m +0ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:31 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mJwtModule dependencies initialized[39m[38;5;3m +100ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:31 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTelegrafCoreModule dependencies initialized[39m[38;5;3m +1ms[39m
+nest-backend  | [31m[Nest] 18  - [39m01/30/2026, 6:41:31 PM [31m  ERROR[39m [38;5;3m[TypeOrmModule] [39m[31mUnable to connect to the database. Retrying (1)...[39m
+nest-backend  | error: password authentication failed for user "postgres"
+nest-backend  |     at parseErrorMessage (/app/node_modules/pg-protocol/dist/parser.js:305:11)
+nest-backend  |     at Parser.handlePacket (/app/node_modules/pg-protocol/dist/parser.js:143:27)
+nest-backend  |     at Parser.parse (/app/node_modules/pg-protocol/dist/parser.js:37:38)
+nest-backend  |     at Socket.<anonymous> (/app/node_modules/pg-protocol/dist/index.js:11:42)
+nest-backend  |     at Socket.emit (node:events:524:28)
+nest-backend  |     at addChunk (node:internal/streams/readable:561:12)
+nest-backend  |     at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+nest-backend  |     at Readable.push (node:internal/streams/readable:392:5)
+nest-backend  |     at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+nest-backend  | /app/node_modules/telegraf/lib/core/network/client.js:315
+nest-backend  |             throw new error_1.default(data, { method, payload });
+nest-backend  |                   ^
+nest-backend  | 
+nest-backend  | TelegramError: 401: Unauthorized
+nest-backend  |     at Telegram.callApi (/app/node_modules/telegraf/lib/core/network/client.js:315:19)
+nest-backend  |     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+nest-backend  |     at async Telegraf.launch (/app/node_modules/telegraf/lib/telegraf.js:188:78) {
+nest-backend  |   response: { ok: false, error_code: 401, description: 'Unauthorized' },
+nest-backend  |   on: { method: 'getMe', payload: {} }
+nest-backend  | }
+nest-backend  | 
+nest-backend  | Node.js v20.20.0
+nest-backend  | 
+nest-backend  | > nest-backend@0.0.1 start:prod
+nest-backend  | > node dist/main
+nest-backend  | 
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:36 PM [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:36 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +68ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:36 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mPassportModule dependencies initialized[39m[38;5;3m +0ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:36 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mMulterModule dependencies initialized[39m[38;5;3m +0ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:36 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTelegrafModule dependencies initialized[39m[38;5;3m +1ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:36 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mMulterModule dependencies initialized[39m[38;5;3m +0ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:36 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigHostModule dependencies initialized[39m[38;5;3m +2ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:36 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mDiscoveryModule dependencies initialized[39m[38;5;3m +2ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:36 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigModule dependencies initialized[39m[38;5;3m +5ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:36 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigModule dependencies initialized[39m[38;5;3m +0ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:36 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mServeStaticModule dependencies initialized[39m[38;5;3m +0ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:36 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mScheduleModule dependencies initialized[39m[38;5;3m +0ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:36 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mJwtModule dependencies initialized[39m[38;5;3m +162ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:36 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTelegrafCoreModule dependencies initialized[39m[38;5;3m +0ms[39m
+nest-backend  | [31m[Nest] 18  - [39m01/30/2026, 6:41:36 PM [31m  ERROR[39m [38;5;3m[TypeOrmModule] [39m[31mUnable to connect to the database. Retrying (1)...[39m
+nest-backend  | error: password authentication failed for user "postgres"
+nest-backend  |     at parseErrorMessage (/app/node_modules/pg-protocol/dist/parser.js:305:11)
+nest-backend  |     at Parser.handlePacket (/app/node_modules/pg-protocol/dist/parser.js:143:27)
+nest-backend  |     at Parser.parse (/app/node_modules/pg-protocol/dist/parser.js:37:38)
+nest-backend  |     at Socket.<anonymous> (/app/node_modules/pg-protocol/dist/index.js:11:42)
+nest-backend  |     at Socket.emit (node:events:524:28)
+nest-backend  |     at addChunk (node:internal/streams/readable:561:12)
+nest-backend  |     at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+nest-backend  |     at Readable.push (node:internal/streams/readable:392:5)
+nest-backend  |     at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+nest-backend  | /app/node_modules/telegraf/lib/core/network/client.js:315
+nest-backend  |             throw new error_1.default(data, { method, payload });
+nest-backend  |                   ^
+nest-backend  | 
+nest-backend  | TelegramError: 401: Unauthorized
+nest-backend  |     at Telegram.callApi (/app/node_modules/telegraf/lib/core/network/client.js:315:19)
+nest-backend  |     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+nest-backend  |     at async Telegraf.launch (/app/node_modules/telegraf/lib/telegraf.js:188:78) {
+nest-backend  |   response: { ok: false, error_code: 401, description: 'Unauthorized' },
+nest-backend  |   on: { method: 'getMe', payload: {} }
+nest-backend  | }
+nest-backend  | 
+nest-backend  | Node.js v20.20.0
+nest-backend  | 
+nest-backend  | > nest-backend@0.0.1 start:prod
+nest-backend  | > node dist/main
+nest-backend  | 
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:42 PM [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:42 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +49ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:42 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mPassportModule dependencies initialized[39m[38;5;3m +1ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:42 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mMulterModule dependencies initialized[39m[38;5;3m +0ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:42 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTelegrafModule dependencies initialized[39m[38;5;3m +0ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:42 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mMulterModule dependencies initialized[39m[38;5;3m +0ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:42 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigHostModule dependencies initialized[39m[38;5;3m +1ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:42 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mDiscoveryModule dependencies initialized[39m[38;5;3m +1ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:42 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigModule dependencies initialized[39m[38;5;3m +3ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:42 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigModule dependencies initialized[39m[38;5;3m +0ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:42 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mServeStaticModule dependencies initialized[39m[38;5;3m +0ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:42 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mScheduleModule dependencies initialized[39m[38;5;3m +0ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:42 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mJwtModule dependencies initialized[39m[38;5;3m +124ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:42 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTelegrafCoreModule dependencies initialized[39m[38;5;3m +1ms[39m
+nest-backend  | [31m[Nest] 18  - [39m01/30/2026, 6:41:42 PM [31m  ERROR[39m [38;5;3m[TypeOrmModule] [39m[31mUnable to connect to the database. Retrying (1)...[39m
+nest-backend  | error: password authentication failed for user "postgres"
+nest-backend  |     at parseErrorMessage (/app/node_modules/pg-protocol/dist/parser.js:305:11)
+nest-backend  |     at Parser.handlePacket (/app/node_modules/pg-protocol/dist/parser.js:143:27)
+nest-backend  |     at Parser.parse (/app/node_modules/pg-protocol/dist/parser.js:37:38)
+nest-backend  |     at Socket.<anonymous> (/app/node_modules/pg-protocol/dist/index.js:11:42)
+nest-backend  |     at Socket.emit (node:events:524:28)
+nest-backend  |     at addChunk (node:internal/streams/readable:561:12)
+nest-backend  |     at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+nest-backend  |     at Readable.push (node:internal/streams/readable:392:5)
+nest-backend  |     at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+nest-backend  | /app/node_modules/telegraf/lib/core/network/client.js:315
+nest-backend  |             throw new error_1.default(data, { method, payload });
+nest-backend  |                   ^
+nest-backend  | 
+nest-backend  | TelegramError: 401: Unauthorized
+nest-backend  |     at Telegram.callApi (/app/node_modules/telegraf/lib/core/network/client.js:315:19)
+nest-backend  |     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+nest-backend  |     at async Telegraf.launch (/app/node_modules/telegraf/lib/telegraf.js:188:78) {
+nest-backend  |   response: { ok: false, error_code: 401, description: 'Unauthorized' },
+nest-backend  |   on: { method: 'getMe', payload: {} }
+nest-backend  | }
+nest-backend  | 
+nest-backend  | Node.js v20.20.0
+nest-backend  | 
+nest-backend  | > nest-backend@0.0.1 start:prod
+nest-backend  | > node dist/main
+nest-backend  | 
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:49 PM [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:49 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +93ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:49 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mPassportModule dependencies initialized[39m[38;5;3m +1ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:49 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mMulterModule dependencies initialized[39m[38;5;3m +0ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:49 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTelegrafModule dependencies initialized[39m[38;5;3m +0ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:49 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mMulterModule dependencies initialized[39m[38;5;3m +0ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:49 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigHostModule dependencies initialized[39m[38;5;3m +2ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:49 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mDiscoveryModule dependencies initialized[39m[38;5;3m +1ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:49 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigModule dependencies initialized[39m[38;5;3m +4ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:49 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigModule dependencies initialized[39m[38;5;3m +1ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:49 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mServeStaticModule dependencies initialized[39m[38;5;3m +0ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:49 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mScheduleModule dependencies initialized[39m[38;5;3m +1ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:50 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mJwtModule dependencies initialized[39m[38;5;3m +166ms[39m
+nest-backend  | [32m[Nest] 18  - [39m01/30/2026, 6:41:50 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTelegrafCoreModule dependencies initialized[39m[38;5;3m +1ms[39m
+nest-backend  | [31m[Nest] 18  - [39m01/30/2026, 6:41:50 PM [31m  ERROR[39m [38;5;3m[TypeOrmModule] [39m[31mUnable to connect to the database. Retrying (1)...[39m
+nest-backend  | error: password authentication failed for user "postgres"
+nest-backend  |     at parseErrorMessage (/app/node_modules/pg-protocol/dist/parser.js:305:11)
+nest-backend  |     at Parser.handlePacket (/app/node_modules/pg-protocol/dist/parser.js:143:27)
+nest-backend  |     at Parser.parse (/app/node_modules/pg-protocol/dist/parser.js:37:38)
+nest-backend  |     at Socket.<anonymous> (/app/node_modules/pg-protocol/dist/index.js:11:42)
+nest-backend  |     at Socket.emit (node:events:524:28)
+nest-backend  |     at addChunk (node:internal/streams/readable:561:12)
+nest-backend  |     at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+nest-backend  |     at Readable.push (node:internal/streams/readable:392:5)
+nest-backend  |     at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+nest-backend  | /app/node_modules/telegraf/lib/core/network/client.js:315
+nest-backend  |             throw new error_1.default(data, { method, payload });
+nest-backend  |                   ^
+nest-backend  | 
+nest-backend  | TelegramError: 401: Unauthorized
+nest-backend  |     at Telegram.callApi (/app/node_modules/telegraf/lib/core/network/client.js:315:19)
+nest-backend  |     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+nest-backend  |     at async Telegraf.launch (/app/node_modules/telegraf/lib/telegraf.js:188:78) {
+nest-backend  |   response: { ok: false, error_code: 401, description: 'Unauthorized' },
+nest-backend  |   on: { method: 'getMe', payload: {} }
+nest-backend  | }
+nest-backend  | 
+nest-backend  | Node.js v20.20.0

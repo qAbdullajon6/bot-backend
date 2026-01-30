@@ -1,0 +1,13 @@
+.git
+.gitignore
+.dockerignore
+Dockerfile
+docker-compose.yml
+node_modules
+dist
+npm-debug.log
+uploads
+.env
+.env.example
+test
+coverage
