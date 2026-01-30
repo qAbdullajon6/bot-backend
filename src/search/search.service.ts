@@ -34,7 +34,7 @@ export class SearchService implements OnModuleInit {
 
   async onModuleInit() {
     const indexName = "documents";
-    let retries = 5;
+    let retries = 30;
     while (retries > 0) {
       try {
         const exists = await this.client.indices.exists({ index: indexName });

@@ -6,22 +6,32 @@ services:
     image: nest-backend
     container_name: nest-backend
     ports:
-      - "${PORT:-4000}:${PORT:-4000}"
+      - "${PORT:-4000}:4000"
     environment:
-      - PORT=${PORT:-4000}
-      - POSTGRES_HOST=postgres
-      - POSTGRES_PORT=5432
-      - POSTGRES_USER=${POSTGRES_USER:-postgres}
-      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-postgres}
-      - POSTGRES_DATABASE=${POSTGRES_DATABASE:-telegram_bot_db}
-      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
-      - JWT_SECRET=${JWT_SECRET}
-      - OPENSEARCH_NODE=https://opensearch:9200
-      - OPENSEARCH_USERNAME=${OPENSEARCH_USERNAME}
-      - OPENSEARCH_PASSWORD=${OPENSEARCH_PASSWORD}
+      PORT: 4000
+
+      # Postgres
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5432
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+      POSTGRES_DATABASE: ${POSTGRES_DATABASE:-telegram_bot_db}
+
+      # Auth / Bot
+      TELEGRAM_BOT_TOKEN: ${TELEGRAM_BOT_TOKEN}
+      JWT_SECRET: ${JWT_SECRET}
+
+      # OpenSearch (DO NOT use localhost)
+      OPENSEARCH_NODE: http://opensearch:9200
+
+      # Agar security o‘chiq bo‘lsa — KERAK EMAS
+      # OPENSEARCH_USERNAME:
+      # OPENSEARCH_PASSWORD:
+
     depends_on:
       - postgres
       - opensearch
+
     restart: unless-stopped
     volumes:
       - ./uploads:/app/uploads
@@ -30,28 +40,39 @@ services:
     image: postgres:15-alpine
     container_name: postgres
     environment:
-      - POSTGRES_USER=${POSTGRES_USER:-postgres}
-      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-postgres}
-      - POSTGRES_DB=${POSTGRES_DATABASE:-telegram_bot_db}
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+      POSTGRES_DB: ${POSTGRES_DATABASE:-telegram_bot_db}
     ports:
-      - "${POSTGRES_PORT:-5432}:5432"
+      - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
     restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
 
   opensearch:
-    image: opensearchproject/opensearch:latest
+    image: opensearchproject/opensearch:2.11.1
     container_name: opensearch
     environment:
-      - discovery.type=single-node
-      - "OPENSEARCH_JAVA_OPTS=-Xms512m -Xmx512m"
-      - "OPENSEARCH_INITIAL_ADMIN_PASSWORD=${OPENSEARCH_INITIAL_ADMIN_PASSWORD}"
+      discovery.type: single-node
+      OPENSEARCH_JAVA_OPTS: "-Xms512m -Xmx512m"
+      DISABLE_SECURITY_PLUGIN: "true"
+      network.host: "0.0.0.0"
     ports:
       - "9200:9200"
       - "9600:9600"
     volumes:
       - opensearch_data:/usr/share/opensearch/data
     restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9200"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
 
 volumes:
   postgres_data:
