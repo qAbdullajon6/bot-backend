@@ -37,13 +37,38 @@ export class SearchService implements OnModuleInit {
   }
 
   async onModuleInit() {
+    const opensearchNode = this.configService.get<string>("OPENSEARCH_NODE");
+
+    // Check if OpenSearch is configured
+    if (!opensearchNode || opensearchNode === "http://localhost:9200") {
+      console.warn(
+        "⚠️  [OpenSearch] OPENSEARCH_NODE is not properly configured!",
+      );
+      console.warn(
+        "⚠️  [OpenSearch] Current value:",
+        opensearchNode || "undefined",
+      );
+      console.warn(
+        "⚠️  [OpenSearch] Please set OPENSEARCH_NODE environment variable to your OpenSearch cluster URL",
+      );
+      console.warn(
+        "⚠️  [OpenSearch] Example: https://your-cluster.searchbox.io:443",
+      );
+      console.warn(
+        "⚠️  [OpenSearch] Search functionality will NOT work until this is configured!",
+      );
+      return; // Skip OpenSearch initialization
+    }
+
+    console.log(`[OpenSearch] Connecting to: ${opensearchNode}`);
+
     const indexName = "documents";
     let retries = 30;
     while (retries > 0) {
       try {
         const exists = await this.client.indices.exists({ index: indexName });
         if (!exists.body) {
-          console.log(`Index ${indexName} not found. Creating...`);
+          console.log(`[OpenSearch] Index ${indexName} not found. Creating...`);
           await this.client.indices.create({
             index: indexName,
             body: {
@@ -70,20 +95,29 @@ export class SearchService implements OnModuleInit {
               },
             },
           });
-          console.log(`Index ${indexName} created.`);
+          console.log(
+            `[OpenSearch] ✅ Index ${indexName} created successfully!`,
+          );
         } else {
-          console.log(`Index ${indexName} already exists.`);
+          console.log(`[OpenSearch] ✅ Index ${indexName} already exists.`);
         }
+        console.log(
+          `[OpenSearch] ✅ Connected successfully to ${opensearchNode}`,
+        );
         break; // Success
       } catch (error) {
         console.error(
-          `Error connecting to OpenSearch (Retries left: ${retries - 1}):`,
+          `[OpenSearch] ❌ Error connecting (Retries left: ${retries - 1}):`,
           error.message,
         );
+        console.error(`[OpenSearch] Connection URL: ${opensearchNode}`);
         retries--;
         if (retries === 0) {
           console.error(
-            "Failed to initialize OpenSearch after multiple attempts.",
+            "[OpenSearch] ❌ Failed to initialize OpenSearch after multiple attempts.",
+          );
+          console.error(
+            "[OpenSearch] ❌ Please check your OPENSEARCH_NODE configuration and network connectivity.",
           );
         } else {
           await new Promise((resolve) => setTimeout(resolve, 3000));
@@ -100,6 +134,14 @@ export class SearchService implements OnModuleInit {
   }
 
   async search(query: string, userId?: string, username?: string) {
+    // Check if OpenSearch is configured
+    const opensearchNode = this.configService.get<string>("OPENSEARCH_NODE");
+    if (!opensearchNode || opensearchNode === "http://localhost:9200") {
+      throw new Error(
+        "OpenSearch is not configured. Please set OPENSEARCH_NODE environment variable.",
+      );
+    }
+
     // Check for synonyms/expansions
     const expandedQuery = await this.synonymsService.expandQuery(query);
     if (expandedQuery !== query) {
@@ -154,6 +196,7 @@ export class SearchService implements OnModuleInit {
       }));
     } catch (error) {
       console.error("[DEBUG] Search error:", error);
+      console.error("[DEBUG] OpenSearch URL:", opensearchNode);
       throw error;
     }
   }

@@ -40,3 +40,11 @@ lerna-debug.log*
 
 # uploads (if you store user uploads locally)
 /uploads
+
+# Windows specific
+nul
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.stackdump

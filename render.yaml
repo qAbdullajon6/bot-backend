@@ -1,0 +1,56 @@
+services:
+  # NestJS Backend
+  - type: web
+    name: telegram-bot-backend
+    env: docker
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    plan: free
+    envVars:
+      - key: PORT
+        value: 4000
+      - key: NODE_ENV
+        value: production
+
+      # PostgreSQL - Render managed database
+      - key: POSTGRES_HOST
+        fromDatabase:
+          name: telegram-bot-db
+          property: host
+      - key: POSTGRES_PORT
+        fromDatabase:
+          name: telegram-bot-db
+          property: port
+      - key: POSTGRES_USER
+        fromDatabase:
+          name: telegram-bot-db
+          property: user
+      - key: POSTGRES_PASSWORD
+        fromDatabase:
+          name: telegram-bot-db
+          property: password
+      - key: POSTGRES_DATABASE
+        fromDatabase:
+          name: telegram-bot-db
+          property: database
+
+      # Auth / Bot
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false # Set manually in Render dashboard
+      - key: JWT_SECRET
+        generateValue: true
+
+      # OpenSearch - Set to external service
+      - key: OPENSEARCH_NODE
+        sync: false # Set manually (e.g., https://your-opensearch-service.com:9200)
+      - key: OPENSEARCH_USERNAME
+        sync: false # Set manually if needed
+      - key: OPENSEARCH_PASSWORD
+        sync: false # Set manually if needed
+
+# PostgreSQL Database
+databases:
+  - name: telegram-bot-db
+    plan: free
+    databaseName: telegram_bot_db
+    user: postgres

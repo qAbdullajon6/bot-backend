@@ -21,12 +21,10 @@ services:
       TELEGRAM_BOT_TOKEN: ${TELEGRAM_BOT_TOKEN}
       JWT_SECRET: ${JWT_SECRET}
 
-      # OpenSearch (DO NOT use localhost)
-      OPENSEARCH_NODE: http://opensearch:9200
-
-      # Agar security o‘chiq bo‘lsa — KERAK EMAS
-      # OPENSEARCH_USERNAME:
-      # OPENSEARCH_PASSWORD:
+      # OpenSearch - Can be local or external (Bonsai, SearchBox, etc.)
+      OPENSEARCH_NODE: ${OPENSEARCH_NODE:-http://opensearch:9200}
+      OPENSEARCH_USERNAME: ${OPENSEARCH_USERNAME}
+      OPENSEARCH_PASSWORD: ${OPENSEARCH_PASSWORD}
 
     depends_on:
       - postgres
