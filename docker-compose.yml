@@ -59,8 +59,9 @@ services:
     container_name: opensearch
     environment:
       discovery.type: single-node
-      OPENSEARCH_JAVA_OPTS: "-Xms512m -Xmx512m"
+      OPENSEARCH_JAVA_OPTS: "-Xms1g -Xmx1g"
       DISABLE_SECURITY_PLUGIN: "true"
+      DISABLE_INSTALL_DEMO_CONFIG: "true"
       network.host: "0.0.0.0"
     ports:
       - "9200:9200"
@@ -69,10 +70,10 @@ services:
       - opensearch_data:/usr/share/opensearch/data
     restart: unless-stopped
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:9200"]
+      test: ["CMD-SHELL", "curl -s http://localhost:9200/_cluster/health | grep -q '\"status\":\"green\"\\|\"status\":\"yellow\"'"]
       interval: 10s
       timeout: 5s
-      retries: 10
+      retries: 5
 
 volumes:
   postgres_data:

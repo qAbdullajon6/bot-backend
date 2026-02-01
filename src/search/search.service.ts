@@ -16,20 +16,24 @@ export class SearchService implements OnModuleInit {
     private searchQueryRepository: Repository<SearchQuery>,
     private readonly synonymsService: SynonymsService,
   ) {
-    this.client = new Client({
-      node:
-        this.configService.get<string>("OPENSEARCH_NODE") ||
-        "http://localhost:9200",
-      auth: {
-        username:
-          this.configService.get<string>("OPENSEARCH_USERNAME") || "admin",
-        password:
-          this.configService.get<string>("OPENSEARCH_PASSWORD") || "admin",
-      },
+    const node =
+      this.configService.get<string>("OPENSEARCH_NODE") ||
+      "http://localhost:9200";
+    const username = this.configService.get<string>("OPENSEARCH_USERNAME");
+    const password = this.configService.get<string>("OPENSEARCH_PASSWORD");
+
+    const clientOptions: any = {
+      node,
       ssl: {
         rejectUnauthorized: false,
       },
-    });
+    };
+
+    if (username && password) {
+      clientOptions.auth = { username, password };
+    }
+
+    this.client = new Client(clientOptions);
   }
 
   async onModuleInit() {
